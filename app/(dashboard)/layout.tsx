@@ -17,7 +17,7 @@ const DashboardLayout = ({
             </div>
 
             
-            <main className="hidden md:pl-56 h-full">
+            <main className="hidden md:pl-56 pt-[90px] h-full">
                 {children}
             </main>
             
