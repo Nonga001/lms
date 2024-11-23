@@ -1,6 +1,7 @@
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import localFont from 'next/font/local';
 import './globals.css';
+import { ToastProvider } from '@/components/providers/toaster-provider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -29,6 +30,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+
           <header>
             <nav>
               {/* Show SignInButton if not signed in */}
@@ -41,6 +43,7 @@ export default function RootLayout({
               </SignedIn>
             </nav>
           </header>
+          <ToastProvider />
           <main>{children}</main>
         </body>
       </html>
