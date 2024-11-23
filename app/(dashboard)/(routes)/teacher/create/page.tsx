@@ -40,7 +40,7 @@ const CreatePage = () => {
     
     const onSubmit = async (values: z.infer<typeof formSchema>) => { 
         try {
-            const response = await axios.post("/api/course", values);
+            const response = await axios.post("/api/courses", values);
             router.push(`/teacher/courses/${response.data.id}`);
         } catch {
             toast.error("Something Went Wrong");
@@ -55,7 +55,7 @@ const CreatePage = () => {
                     Name Your Course
                 </h1>
                 <p className='text-sm text-slate-600'>
-                    What would you like to name your course? Don't worry coz you can always change this later
+                    What would you like to name your course? Do not worry because you can always change this later
                 </p>
                 <Form {...form}> 
                     <form
